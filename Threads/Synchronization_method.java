@@ -1,45 +1,50 @@
-class Data
+ class Mythread extends Thread
+ {
+	 synchronized public void run()
+	 {
+		 int i=1;
+		 while(true)
+		 {
+			 System.out.println(i+" Hello ");
+			 i++;
+			 try
+			 {
+				 Thread.sleep(500);
+			 }
+			 catch(InterruptedException e)
+			 {
+				 System.out.println(e);
+			 } 
+		 }
+	 }
+ }
+ class Mythread2 extends Thread
+ {
+	 synchronized public void run()
+	 {
+		 int i=1;
+		 while(true)
+		 {
+			 System.out.println(i+" World");
+			 i++;
+			 try
+			 {
+				 Thread.sleep(500);
+			 }
+			 catch(InterruptedException e)
+			 {
+				 System.out.println(e);
+			 }
+		 }
+	 }
+ }
+class Main
 {
-	synchronized public void display(String str)
+	public static void main(String[] args)
 	{
-		for(int i=0;i<str.length();i++)
-		{
-			System.out.print(str.charAt(i));
-		}
-	}
-}
-class Printer1 extends Thread
-{
-	Data d;
-	Printer1(Data d)
-	{
-		this.d=d;
-	}
-	public void run()
-	{
-		d.display("Printer 1 in execution");
-	}
-}
-class Printer2 extends Thread
-{
-	Data d;
-	Printer2(Data d)
-	{
-		this.d=d;
-	}
-	public void run()
-	{
-		d.display("\nPrinter 2 in execution");
-	}
-}
-public class Main 
-{
-	public static void main(String[] args )
-	{
-		Data d=new Data();
-		Printer1 p1=new Printer1(d);
-		Printer2 p2=new Printer2(d);
-		p1.start();
-		p2.start();
+		Mythread t=new Mythread();
+		Mythread2 t2=new Mythread2();
+		t.start();
+		t2.start();
 	}
 }
