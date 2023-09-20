@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the internal implementations of Data Structures and Algorithms (DSA) in C. This repository contains various code snippets of DSA implementations and how they all work behind the scenes.
+Welcome to the internal implementations in Java. This repository contains various code snippets of Java implementations and how they all work behind the scenes.
 ## Table of Contents
 
 
