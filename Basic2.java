@@ -1,5 +1,6 @@
-import java.util.Scanner;
+//program to count words in a string
 
+import java.util.Scanner;
 class WordExample 
 {
 	private String strdata;
