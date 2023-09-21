@@ -47,7 +47,7 @@ class Main
 	{
 		Car s=new Car("Car","Honda");
 		s.display();
-		Truck t=new Truck("Truck","Mercedes");
+		Truck t=new Truck("Truck","Mercedes");   //new objects can be created and added here
 		t.display();
 	}
 }
